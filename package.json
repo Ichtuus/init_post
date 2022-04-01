@@ -1,0 +1,22 @@
+{
+  "name": "init_post",
+  "version": "1.0.0",
+  "description": "basic installation post to start dev",
+  "main": "initpost.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Ichtuus/init_post.git"
+  },
+  "author": "Nicolas Diarra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ichtuus/init_post/issues"
+  },
+  "homepage": "https://github.com/Ichtuus/init_post#readme",
+  "dependencies": {
+    "fs-extra": "^10.0.1"
+  }
+}

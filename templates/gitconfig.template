@@ -1,0 +1,78 @@
+
+[credential]
+	helper=store
+
+[user]
+	name = {{user}}
+	email = {{email}} 
+ 
+[color]
+	ui = auto
+[color "branch"]
+	upstream = cyan
+[color "status"]
+	added = green
+	modified = purple
+	changed = yellow
+	untracked = blue
+
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	ps = push
+	aa = add .
+	lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cred(%Cgreen%an %cr%Cred)%Creset'
+	lgd = log --graph --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cred(%Cgreen%an%Cred - %Cgreen%ai%Cred / %Cgreen%cn%Cred - %Cgreen%ci%Cred)%Creset' --date-order
+	lge = log --graph --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cred(%Cgreen%an%Cred: %Cgreen%ae%Cred - %Cgreen%ai%Cred)%Creset'
+	cine = commit --no-edit
+	ciam = commit --amend
+	cinema = commit --no-edit --amend
+	menenff = merge --no-edit --no-ff
+	fixup = !sh -c 'git commit --fixup=$1' -
+	squash = !sh -c 'git commit --squash=$1' -
+	ri = rebase --interactive
+	files = diff-tree --no-commit-id --name-status -r
+	aliases = config --get-regexp alias
+	publish = !sh -c 'git co $1 && git fetch origin && git reset --hard origin/$1 && git merge --no-ff -m \"Merge $2 into $1\" origin/$2' -
+[core]
+	autocrlf = input
+	excludesfile = /home/jeremy/.gitignore
+[diff]
+	mnemonicPrefix = true
+	wordRegex = .
+	color = true
+	renames = true
+[fetch]
+	recurseSubmodules = on-demand
+	prune = true
+[grep]
+	extendedRegexp = true
+[log]
+	abbrevCommit = true
+	follow = true
+[merge]
+	conflictStyle = diff3
+	tool = meld
+[mergetool]
+	keepBackup = false
+	keepTemporaries = false
+	prompt = false
+[pull]
+	rebase = preserve
+[push]
+	default = current
+[status]
+	showUntrackedFiles = all
+[rerere]
+	enabled = true
+[rebase]
+	autostash = true
+	autosquash = true
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+
+
