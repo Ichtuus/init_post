@@ -4,7 +4,7 @@ const path = require("path");
 
 
 const gitConfigFile = ".gitconfig"
-exec(` FILE=${gitConfigFile} &&  if test -f "$FILE"; then echo "$FILE exists."; fi`, (error, stdout, stderr) => {
+exec(`cd ~ && FILE=${gitConfigFile} &&  if test -f "$FILE"; then echo "$FILE exists."; fi`, (error, stdout, stderr) => {
   if (error) {
     console.log(error.stack);
     console.log('Error code: ', error.code);

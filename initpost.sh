@@ -1,5 +1,4 @@
 #!/bin/sh
-touch boubou.txt
 cd ~ 
 
 echo "Instaltation of zsh"
@@ -7,6 +6,10 @@ sudo apt install zsh
 
 echo "Instaltation of ohmyzsh"
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+echo "Enable zsh by default"
+chsh -s $(which zsh)
+source ~/.zshrc
 
 echo "Initialization of vscode intall process"
 echo "Update the packages index and install the dependencies"
